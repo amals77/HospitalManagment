@@ -1,0 +1,71 @@
+<div class="main-div">
+    <div class="navbar" fxLayoutAlign="end center" fxLayoutAlign.xs="start center" fxLayoutGap="40px" fxLayout="row wrap">
+        <h4 class="nav-title" [routerLink]="['/Home']" routerLinkActive="router-link-active">Home</h4>
+        <h4 class="nav-title">Careers</h4>
+        <h4 class="nav-title">About us</h4>
+        <h4 class="nav-title">Contact us</h4>
+    </div>
+    <div class="form-div" style="width: 90%;">
+        <h4 class="form-title">Book Your Appointment</h4>
+
+        <form [formGroup]="formGroup">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="50px">
+                <div fxFlex>
+                    <div>
+                        <label class="form-label">Patient Name</label>
+                        <input type="text" class="form-input" placeholder="Enter Patient Name" formControlName="name">
+                    </div>
+                    <div>
+                        <label class="form-label">Location</label>
+                        <input type="text" class="form-input" placeholder="Enter Your Location" formControlName="location">
+                    </div>
+                    <div>
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-input" placeholder="Enter Your Address" formControlName="address">
+                    </div>
+                    <div>
+                        <label class="form-label">Phone Number</label>
+                        <input type="number" class="form-input" placeholder="Enter Your Phone Number" formControlName="phone">
+                    </div>
+                </div>
+                <div fxFlex>
+                    <div>
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="Enter Your Email" formControlName="email">
+                    </div>
+                    <div #menuBtn>
+                        <label class="form-label">Docter</label>
+                        <button class="form-dropdwn" [matMenuTriggerFor]="menu">
+                          <div fxLayoutAlign="space-between">
+                          <span [ngClass]="{'placeHolder': selectedDr=='Select Doctor'}">{{selectedDr}}</span>
+                            <mat-icon>keyboard_arrow_down</mat-icon>
+                          </div>
+                        </button>
+
+                        <mat-menu #menu="matMenu" class="drop-menu">
+                            <button mat-menu-item class="menu-item" (click)="selectDoctor(dr)" *ngFor="let dr of Doctorlist" style="width: 100%;" [style.width.px]="menuBtn.offsetWidth*2">
+                            {{dr.name}}
+                          </button>
+                        </mat-menu>
+
+                    </div>
+                    <div>
+                        <label class="form-label">Department</label>
+                        <input type="text" class="form-input" formControlName="specializedIN" readonly>
+                    </div>
+                    <div>
+                        <label class="form-label">Date</label>
+                        <input type="text" class="form-input" placeholder="Enter Date" formControlName="date">
+                    </div>
+                    <div>
+                        <label class="form-label">Patient's current condition</label>
+                        <textarea type="text" class="form-textarea" placeholder="Enter Detailed Condition of patient" formControlName="details"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div style="margin-top: 40px;" fxLayoutAlign="center ">
+            <button class="submit" (click)="formGroup.valid?onSubmit(formGroup.value):toastr.error('Enter required fields')">Apply</button>
+        </div>
+    </div>
+</div>

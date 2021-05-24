@@ -1,0 +1,144 @@
+.main-div {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: scroll;
+}
+
+.main-div::-webkit-scrollbar {
+    display: none;
+}
+
+.main-div {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.navbar {
+    padding: 5px 15px;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    background-color: rgb(61, 139, 255);
+    background-image: linear-gradient(-90deg, rgb(61, 139, 255), rgb(173, 219, 250));
+}
+
+.nav-title {
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 10px;
+    &:hover {
+        color: white;
+    }
+}
+
+.form-div {
+    width: 100%;
+    padding: 2% 4%;
+}
+
+.form-title {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    color: rgb(61, 139, 255);
+}
+
+.form-label {
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 1;
+    display: block;
+    color: rgb(61, 139, 255);
+}
+
+.form-input {
+    margin-top: 13px;
+    font-size: 16px;
+    line-height: 1;
+    height: 30px;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    color: rgb(61, 139, 255);
+    border: none;
+    border-bottom: solid 1px rgb(173, 219, 250);
+    &:focus {
+        border-bottom: solid 3px rgb(61, 139, 255);
+    }
+}
+
+.form-textarea {
+    margin-top: 13px;
+    font-size: 16px;
+    line-height: 1;
+    height: 100px;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+    color: rgb(61, 139, 255);
+    border: solid 1px rgb(173, 219, 250);
+    &:focus {
+        border: solid 3px rgb(61, 139, 255);
+    }
+}
+
+.placeHolder {
+    color: grey;
+}
+
+.form-dropdwn {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    margin-top: 13px;
+    font-size: 16px;
+    line-height: 1;
+    border: none;
+    background: white;
+    cursor: pointer;
+    color: rgb(61, 139, 255);
+    border-bottom: solid 1px rgb(173, 219, 250);
+    position: relative;
+    &:hover {
+        border-bottom: solid 3px rgb(61, 139, 255);
+    }
+}
+
+.drop-menu {
+    width: 100%;
+}
+
+.menu-item {
+    color: rgb(61, 139, 255);
+    font-size: 16px;
+    line-height: 1;
+    &:hover {
+        color: black;
+        background-color: rgb(173, 219, 250);
+    }
+}
+
+::ng-deep .mat-menu-item {
+    width: 100%;
+}
+
+.submit {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(61, 139, 255);
+    background-image: linear-gradient(-90deg, rgb(61, 139, 255), rgb(173, 219, 250));
+    cursor: pointer;
+    &:hover {
+        color: white;
+        background-image: linear-gradient(90deg, rgb(61, 139, 255), rgb(173, 219, 250));
+    }
+}
